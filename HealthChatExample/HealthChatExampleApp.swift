@@ -20,13 +20,17 @@ struct HealthChatExampleApp: App {
     }
     
     private func createApp() -> some View {
-        let app = HealthChatApp(chatModel: model, onConversationSelected: { conversation in
-            model.messages.removeAll()
-        })
-        
-        self.app = app
-        
-        return app.createView()
+        if let app {
+            return app.createView()
+        } else {
+            let app = HealthChatApp(chatModel: model, onConversationSelected: { conversation in
+                model.messages.removeAll()
+            })
+            
+            self.app = app
+            
+            return app.createView()
+        }
     }
 }
 
