@@ -21,6 +21,8 @@
 		FE74C6072D0873A3006054E6 /* ChatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74C6062D0873A3006054E6 /* ChatScreen.swift */; };
 		FE74C60B2D088230006054E6 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74C60A2D088230006054E6 /* TestUtils.swift */; };
 		FE74C60D2D08B25F006054E6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74C60C2D08B25F006054E6 /* ViewModel.swift */; };
+		FE74C6112D08B9FF006054E6 /* HealthChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74C60F2D08B9FF006054E6 /* HealthChatTests.swift */; };
+		FE7B49F42D08C11800DE5245 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7B49F32D08C11800DE5245 /* TestUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,15 +77,10 @@
 		FE74C6062D0873A3006054E6 /* ChatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScreen.swift; sourceTree = "<group>"; };
 		FE74C60A2D088230006054E6 /* TestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
 		FE74C60C2D08B25F006054E6 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		FE74C60E2D08B9BE006054E6 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		FE74C60F2D08B9FF006054E6 /* HealthChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthChatTests.swift; sourceTree = "<group>"; };
+		FE7B49F32D08C11800DE5245 /* TestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		FE74C5E92D086BC9006054E6 /* HealthChatTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = HealthChatTests;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		FE74C5B72D086B11006054E6 /* Frameworks */ = {
@@ -116,9 +113,10 @@
 		FE74C5B12D086B11006054E6 = {
 			isa = PBXGroup;
 			children = (
+				FE74C60E2D08B9BE006054E6 /* Package.swift */,
 				FE74C5D02D086B46006054E6 /* HealthChatExample */,
 				FE74C5FB2D086BD2006054E6 /* HealthChat */,
-				FE74C5E92D086BC9006054E6 /* HealthChatTests */,
+				FE74C6102D08B9FF006054E6 /* HealthChatTests */,
 				FE74C5BB2D086B11006054E6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -169,8 +167,17 @@
 				FE74C5FF2D086C28006054E6 /* HealthChatModel.swift */,
 				FE74C6012D086F2D006054E6 /* ConversationsScreen.swift */,
 				FE74C6062D0873A3006054E6 /* ChatScreen.swift */,
+				FE7B49F32D08C11800DE5245 /* TestUtils.swift */,
 			);
 			path = Sources;
+			sourceTree = "<group>";
+		};
+		FE74C6102D08B9FF006054E6 /* HealthChatTests */ = {
+			isa = PBXGroup;
+			children = (
+				FE74C60F2D08B9FF006054E6 /* HealthChatTests.swift */,
+			);
+			path = HealthChatTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,9 +249,6 @@
 			dependencies = (
 				FE74C5E62D086BC9006054E6 /* PBXTargetDependency */,
 				FE74C5E82D086BC9006054E6 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				FE74C5E92D086BC9006054E6 /* HealthChatTests */,
 			);
 			name = HealthChatTests;
 			packageProductDependencies = (
@@ -340,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE74C60D2D08B25F006054E6 /* ViewModel.swift in Sources */,
+				FE7B49F42D08C11800DE5245 /* TestUtils.swift in Sources */,
 				FE74C5FC2D086BD2006054E6 /* HealthChat.docc in Sources */,
 				FE74C6022D086F2D006054E6 /* ConversationsScreen.swift in Sources */,
 				FE74C6002D086C28006054E6 /* HealthChatModel.swift in Sources */,
@@ -351,6 +356,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE74C6112D08B9FF006054E6 /* HealthChatTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +441,8 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
 			};
 			name = Debug;
 		};
@@ -490,6 +498,8 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.0;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -582,7 +592,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -617,7 +627,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";

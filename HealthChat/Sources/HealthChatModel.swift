@@ -36,7 +36,7 @@ public final class HealthChatModel {
                     id: message.id ?? UUID().uuidString,
                     text: message.text,
                     createdAt: message.createdAt,
-                    sender: senderUser.toHealthUser(),
+                    sender: TestUtils.senderUser.toHealthUser(),
                     status: .sending
                 )
                 
