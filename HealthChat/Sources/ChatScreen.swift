@@ -12,12 +12,15 @@ internal import ExyteChat
 struct ChatScreen: View {
     @Environment(HealthChatModel.self) private var model
     
+    let onMessageSendAction: MessageSendAction
+    
     var body: some View {
         let messages = model.messages.map { m in
             m.toMessage()
         }
         ChatView(messages: messages) { message in
-            model.handleSendMessage(message)
+            let m = HealthChatMessage(draft: message, user: model.user)
+            onMessageSendAction(m)
         }
     }
 }
@@ -73,8 +76,18 @@ extension HealthChatMessage {
             replyMessage: nil
         )
     }
+    
+    init(draft: DraftMessage, user: HealthChatUser) {
+        self.init(
+            id: draft.id ?? UUID().uuidString,
+            text: draft.text,
+            createdAt: draft.createdAt,
+            sender: user,
+            status: .sending
+        )
+    }
 }
 
 #Preview {
-    ChatScreen()
+    ChatScreen(onMessageSendAction: { _ in })
 }

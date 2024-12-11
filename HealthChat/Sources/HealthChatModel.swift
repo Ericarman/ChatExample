@@ -27,51 +27,6 @@ public final class HealthChatModel {
         self.conversations = conversations
         self.language = language
     }
-    
-    func handleSendMessage(_ message: DraftMessage) {
-        Task { [weak self] in
-            guard let self else { return }
-            do {
-                let healthMessage = HealthChatMessage(
-                    id: message.id ?? UUID().uuidString,
-                    text: message.text,
-                    createdAt: message.createdAt,
-                    sender: TestUtils.senderUser.toHealthUser(),
-                    status: .sending
-                )
-                
-                try await send(message: healthMessage)
-            } catch {
-                // TODO:
-            }
-        }
-    }
-    
-    func send(message: HealthChatMessage) async throws {
-        messages.append(message)
-        
-        Task { [weak self] in
-            guard let self else { return }
-            
-            do {
-                try await Task.sleep(for: .seconds(2))
-                
-                if let idx = getMessageIdx(message) {
-                    messages[idx].status = .sent
-                }
-            } catch {
-                if let idx = getMessageIdx(message) {
-                    messages[idx].status = .error
-                }
-                
-                // TODO: Maybe show some toasts
-            }
-        }
-    }
-    
-    private func getMessageIdx(_ message: HealthChatMessage) -> Int? {
-        messages.firstIndex(where: { $0.id == message.id })
-    }
 }
 
 public struct HealthChatUser: Identifiable {
@@ -128,15 +83,22 @@ public struct HealthChatMessage: Identifiable {
 }
 
 public typealias ConversationSelection = (HealthChatConversation) -> Void
+public typealias MessageSendAction = (HealthChatMessage) -> Void
 
 @MainActor
 public final class HealthChatApp {
     let chatModel: HealthChatModel
     let onConversationSelected: ConversationSelection
+    let onMessageSendAction: MessageSendAction
     
-    public init(chatModel: HealthChatModel, onConversationSelected: @escaping ConversationSelection) {
+    public init(
+        chatModel: HealthChatModel,
+        onConversationSelected: @escaping ConversationSelection,
+        onMessageSendAction: @escaping MessageSendAction
+    ) {
         self.chatModel = chatModel
         self.onConversationSelected = onConversationSelected
+        self.onMessageSendAction = onMessageSendAction
     }
     
     public func createViewController() -> some UIViewController {
@@ -148,7 +110,8 @@ public final class HealthChatApp {
                                         onConversationSelected: { [weak self] conversation in
             self?.onConversationSelected(conversation)
         })
-        return ConversationsScreen(viewModel: vm)
+        
+        return ConversationsScreen(viewModel: vm, onMessageSendAction: onMessageSendAction)
             .environment(chatModel)
     }
 }

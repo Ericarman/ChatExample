@@ -23,14 +23,44 @@ struct HealthChatExampleApp: App {
         if let app {
             return app.createView()
         } else {
-            let app = HealthChatApp(chatModel: model, onConversationSelected: { conversation in
-                model.messages.removeAll()
-            })
+            let app = HealthChatApp(
+                chatModel: model,
+                onConversationSelected: { conversation in
+                    model.messages.removeAll()
+                },
+                onMessageSendAction: { message in
+                    sendMessage(message)
+                }
+            )
             
             self.app = app
             
             return app.createView()
         }
+    }
+    
+    private func sendMessage(_ message: HealthChatMessage) {
+        model.messages.append(message)
+        
+        Task {
+            do {
+                try await Task.sleep(for: .seconds(2))
+                
+                if let idx = getMessageIdx(message) {
+                    model.messages[idx].status = .sent
+                }
+            } catch {
+                if let idx = getMessageIdx(message) {
+                    model.messages[idx].status = .error
+                }
+                
+                // TODO: Maybe show some toasts
+            }
+        }
+    }
+    
+    private func getMessageIdx(_ message: HealthChatMessage) -> Int? {
+        model.messages.firstIndex(where: { $0.id == message.id })
     }
 }
 

@@ -37,6 +37,8 @@ struct ConversationsScreen: View {
     @Environment(HealthChatModel.self) private var model
     @Bindable private(set) var viewModel: ConversationsViewModel
     
+    let onMessageSendAction: MessageSendAction
+    
     var body: some View {
         NavigationStack(path: $viewModel.navigationPath) {
             List(model.conversations) { conversation in
@@ -53,7 +55,7 @@ struct ConversationsScreen: View {
             .navigationDestination(for: ConversationDestination.self) { destination in
                 switch destination {
                 case .chat:
-                    ChatScreen()
+                    ChatScreen(onMessageSendAction: onMessageSendAction)
                 }
             }
         }
@@ -95,5 +97,5 @@ private struct ConversationCell: View {
     )
     
     let vm = ConversationsViewModel(user: sender, onConversationSelected: { _ in })
-    ConversationsScreen(viewModel: vm)
+    ConversationsScreen(viewModel: vm, onMessageSendAction: { _ in })
 }
