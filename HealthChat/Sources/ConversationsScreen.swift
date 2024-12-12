@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-internal import ExyteChat
+@_implementationOnly import ExyteChat
 
 @Observable
 final class ConversationsViewModel: ViewModel {

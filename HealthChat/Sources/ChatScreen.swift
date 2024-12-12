@@ -7,7 +7,7 @@
 
 import SwiftUI
 import Observation
-internal import ExyteChat
+@_implementationOnly import ExyteChat
 
 struct ChatScreen: View {
     @Environment(HealthChatModel.self) private var model
