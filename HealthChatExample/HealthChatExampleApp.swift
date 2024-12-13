@@ -56,6 +56,8 @@ struct HealthChatExampleApp: App {
                 
                 // TODO: Maybe show some toasts
             }
+            
+            print(model.messages)
         }
     }
     

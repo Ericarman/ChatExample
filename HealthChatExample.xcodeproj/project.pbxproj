@@ -17,7 +17,6 @@
 		FE74C5FD2D086BD2006054E6 /* HealthChat.h in Headers */ = {isa = PBXBuildFile; fileRef = FE74C5F92D086BD2006054E6 /* HealthChat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE74C6002D086C28006054E6 /* HealthChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74C5FF2D086C28006054E6 /* HealthChatModel.swift */; };
 		FE74C6022D086F2D006054E6 /* ConversationsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74C6012D086F2D006054E6 /* ConversationsScreen.swift */; };
-		FE74C6052D08738D006054E6 /* ExyteChat in Frameworks */ = {isa = PBXBuildFile; productRef = FE74C6042D08738D006054E6 /* ExyteChat */; };
 		FE74C6072D0873A3006054E6 /* ChatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74C6062D0873A3006054E6 /* ChatScreen.swift */; };
 		FE74C60B2D088230006054E6 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74C60A2D088230006054E6 /* TestUtils.swift */; };
 		FE74C60D2D08B25F006054E6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74C60C2D08B25F006054E6 /* ViewModel.swift */; };
@@ -95,7 +94,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE74C6052D08738D006054E6 /* ExyteChat in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,7 +228,6 @@
 			);
 			name = HealthChat;
 			packageProductDependencies = (
-				FE74C6042D08738D006054E6 /* ExyteChat */,
 			);
 			productName = HealthChat;
 			productReference = FE74C5DA2D086BC8006054E6 /* HealthChat.framework */;
@@ -289,7 +286,6 @@
 			mainGroup = FE74C5B12D086B11006054E6;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				FE74C6032D08738D006054E6 /* XCRemoteSwiftPackageReference "Chat" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FE74C5BB2D086B11006054E6 /* Products */;
@@ -708,25 +704,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		FE74C6032D08738D006054E6 /* XCRemoteSwiftPackageReference "Chat" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/exyte/Chat.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.10;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		FE74C6042D08738D006054E6 /* ExyteChat */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FE74C6032D08738D006054E6 /* XCRemoteSwiftPackageReference "Chat" */;
-			productName = ExyteChat;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FE74C5B22D086B11006054E6 /* Project object */;
 }

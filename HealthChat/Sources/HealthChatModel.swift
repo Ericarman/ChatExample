@@ -7,7 +7,7 @@
 
 import Foundation
 import SwiftUI
-@_implementationOnly import ExyteChat
+//@_implementationOnly import ExyteChat
 
 @Observable
 @MainActor
@@ -29,7 +29,7 @@ public final class HealthChatModel {
     }
 }
 
-public struct HealthChatUser: Identifiable {
+public struct HealthChatUser: Identifiable, Sendable {
     public let id: String
     public let name: String
     public let avatarURL: URL?

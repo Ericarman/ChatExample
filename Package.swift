@@ -12,21 +12,21 @@ let package = Package(
             name: "HealthChatExample",
             targets: ["HealthChatExample"]
         ),
-        .library(
-            name: "HealthChatExampleDynamic",
-            type: .dynamic,
-            targets: ["HealthChatExample"]
-        ),
+//        .library(
+//            name: "HealthChatExampleDynamic",
+//            type: .dynamic,
+//            targets: ["HealthChatExample"]
+//        ),
     ],
     dependencies: [
-        .package(url: "https://github.com/exyte/Chat.git", branch: "main"),
+//        .package(url: "https://github.com/exyte/Chat.git", branch: "main"),
     ],
     targets: [
         .target(
             name: "HealthChatExample",
-            dependencies: [
-                .product(name: "ExyteChat", package: "Chat")
-            ],
+//            dependencies: [
+//                .product(name: "ExyteChat", package: "Chat")
+//            ],
             path: "HealthChat/Sources"
         ),
     ]
