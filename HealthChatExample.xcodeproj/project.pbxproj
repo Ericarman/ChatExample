@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE2DF3142D107B7400BD9E21 /* SwiftyChat in Frameworks */ = {isa = PBXBuildFile; productRef = FE2DF3132D107B7400BD9E21 /* SwiftyChat */; };
 		FE74C5D12D086B46006054E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE74C5CB2D086B46006054E6 /* Preview Assets.xcassets */; };
 		FE74C5D22D086B46006054E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE74C5CD2D086B46006054E6 /* Assets.xcassets */; };
 		FE74C5D42D086B46006054E6 /* HealthChatExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74C5CF2D086B46006054E6 /* HealthChatExampleApp.swift */; };
@@ -94,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE2DF3142D107B7400BD9E21 /* SwiftyChat in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +230,7 @@
 			);
 			name = HealthChat;
 			packageProductDependencies = (
+				FE2DF3132D107B7400BD9E21 /* SwiftyChat */,
 			);
 			productName = HealthChat;
 			productReference = FE74C5DA2D086BC8006054E6 /* HealthChat.framework */;
@@ -286,6 +289,7 @@
 			mainGroup = FE74C5B12D086B11006054E6;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
+				FE2DF3122D107B7400BD9E21 /* XCRemoteSwiftPackageReference "SwiftyChat" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FE74C5BB2D086B11006054E6 /* Products */;
@@ -708,6 +712,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FE2DF3122D107B7400BD9E21 /* XCRemoteSwiftPackageReference "SwiftyChat" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/EnesKaraosman/SwiftyChat.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FE2DF3132D107B7400BD9E21 /* SwiftyChat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FE2DF3122D107B7400BD9E21 /* XCRemoteSwiftPackageReference "SwiftyChat" */;
+			productName = SwiftyChat;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FE74C5B22D086B11006054E6 /* Project object */;
 }

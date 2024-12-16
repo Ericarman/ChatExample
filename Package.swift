@@ -7,7 +7,6 @@ let package = Package(
     name: "HealthChatExample",
     platforms: [.iOS(.v15)],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "HealthChatExample",
             targets: ["HealthChatExample"]
@@ -19,14 +18,14 @@ let package = Package(
 //        ),
     ],
     dependencies: [
-//        .package(url: "https://github.com/exyte/Chat.git", branch: "main"),
+        .package(url: "https://github.com/EnesKaraosman/SwiftyChat.git", branch: "master")
     ],
     targets: [
         .target(
             name: "HealthChatExample",
-//            dependencies: [
-//                .product(name: "ExyteChat", package: "Chat")
-//            ],
+            dependencies: [
+                .product(name: "SwiftyChat", package: "SwiftyChat")
+            ],
             path: "HealthChat/Sources"
         ),
     ]

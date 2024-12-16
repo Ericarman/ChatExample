@@ -7,7 +7,7 @@
 
 import SwiftUI
 import Combine
-//@_implementationOnly import ExyteChat
+@_implementationOnly import SwiftyChat
 
 final class ConversationsViewModel: ViewModel, ObservableObject {
     let user: HealthChatUser
