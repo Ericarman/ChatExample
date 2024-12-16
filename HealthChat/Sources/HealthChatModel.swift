@@ -7,14 +7,16 @@
 
 import Foundation
 import SwiftUI
+import Combine
 //@_implementationOnly import ExyteChat
 
-@available(iOS 17.0, *)
-@Observable
 @MainActor
-public final class HealthChatModel {
+public final class HealthChatModel: ObservableObject {
+    @Published
     public var user: HealthChatUser
+    @Published
     public var messages: [HealthChatMessage] = []
+    @Published
     public var conversations: [HealthChatConversation] = []
     
     public let language: String
@@ -86,7 +88,6 @@ public struct HealthChatMessage: Identifiable {
 public typealias ConversationSelection = (HealthChatConversation) -> Void
 public typealias MessageSendAction = (HealthChatMessage) -> Void
 
-@available(iOS 17.0, *)
 @MainActor
 public final class HealthChatApp {
     let chatModel: HealthChatModel
@@ -114,6 +115,6 @@ public final class HealthChatApp {
         })
         
         return ConversationsScreen(viewModel: vm, onMessageSendAction: onMessageSendAction)
-            .environment(chatModel)
+            .environmentObject(chatModel)
     }
 }

@@ -6,13 +6,13 @@
 //
 
 import SwiftUI
+import Combine
 //@_implementationOnly import ExyteChat
 
-@available(iOS 17.0, *)
-@Observable
-final class ConversationsViewModel: ViewModel {
+final class ConversationsViewModel: ViewModel, ObservableObject {
     let user: HealthChatUser
-    var navigationPath: [ConversationDestination] = []
+    @Published
+    var navigationPath: ConversationDestination?
     
     let onConversationSelected: ConversationSelection
     
@@ -26,7 +26,7 @@ final class ConversationsViewModel: ViewModel {
     
     func handleConversationTap(_ conversation: HealthChatConversation) {
         onConversationSelected(conversation)
-        navigationPath.append(.chat)
+        navigationPath = .chat
     }
 }
 
@@ -34,15 +34,14 @@ enum ConversationDestination: Hashable {
     case chat
 }
 
-@available(iOS 17.0, *)
 struct ConversationsScreen: View {
-    @Environment(HealthChatModel.self) private var model
-    @Bindable private(set) var viewModel: ConversationsViewModel
+    @EnvironmentObject private var model: HealthChatModel
+    @ObservedObject private(set) var viewModel: ConversationsViewModel
     
     let onMessageSendAction: MessageSendAction
     
     var body: some View {
-        NavigationStack(path: $viewModel.navigationPath) {
+        NavigationView {
             List(model.conversations) { conversation in
                 ConversationCell(
                     title: conversation.title,
@@ -54,11 +53,17 @@ struct ConversationsScreen: View {
                     viewModel.handleConversationTap(conversation)
                 }
             }
-            .navigationDestination(for: ConversationDestination.self) { destination in
-                switch destination {
-                case .chat:
-                    ChatScreen(onMessageSendAction: onMessageSendAction)
-                }
+            .background {
+                NavigationLink(
+                    tag: ConversationDestination.chat,
+                    selection: $viewModel.navigationPath,
+                    destination: {
+                        ChatScreen(onMessageSendAction: onMessageSendAction)
+                    },
+                    label: {
+                        EmptyView()
+                    }
+                )
             }
         }
     }

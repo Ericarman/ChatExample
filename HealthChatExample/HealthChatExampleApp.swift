@@ -8,10 +8,9 @@
 import SwiftUI
 import HealthChat
 
-@available(iOS 17.0, *)
 @main
 struct HealthChatExampleApp: App {
-    @State private var model = HealthChatModel.test
+    @StateObject private var model = HealthChatModel.test
     @State private var app: HealthChatApp?
     
     var body: some Scene {
@@ -45,7 +44,7 @@ struct HealthChatExampleApp: App {
         
         Task {
             do {
-                try await Task.sleep(for: .seconds(2))
+                try await Task.sleep(nanoseconds: 2 * NSEC_PER_SEC)
                 
                 if let idx = getMessageIdx(message) {
                     model.messages[idx].status = .sent
@@ -68,7 +67,6 @@ struct HealthChatExampleApp: App {
 }
 
 
-@available(iOS 17.0, *)
 private extension HealthChatModel {
     static var test: HealthChatModel {
         let user = HealthChatUser(
