@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 //@_implementationOnly import ExyteChat
 
+@available(iOS 17.0, *)
 @Observable
 @MainActor
 public final class HealthChatModel {
@@ -85,6 +86,7 @@ public struct HealthChatMessage: Identifiable {
 public typealias ConversationSelection = (HealthChatConversation) -> Void
 public typealias MessageSendAction = (HealthChatMessage) -> Void
 
+@available(iOS 17.0, *)
 @MainActor
 public final class HealthChatApp {
     let chatModel: HealthChatModel

@@ -8,6 +8,7 @@
 import SwiftUI
 //@_implementationOnly import ExyteChat
 
+@available(iOS 17.0, *)
 @Observable
 final class ConversationsViewModel: ViewModel {
     let user: HealthChatUser
@@ -33,6 +34,7 @@ enum ConversationDestination: Hashable {
     case chat
 }
 
+@available(iOS 17.0, *)
 struct ConversationsScreen: View {
     @Environment(HealthChatModel.self) private var model
     @Bindable private(set) var viewModel: ConversationsViewModel

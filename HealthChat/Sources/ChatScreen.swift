@@ -9,6 +9,7 @@ import SwiftUI
 import Observation
 //@_implementationOnly import ExyteChat
 
+@available(iOS 17.0, *)
 struct ChatScreen: View {
     @Environment(HealthChatModel.self) private var model
     
