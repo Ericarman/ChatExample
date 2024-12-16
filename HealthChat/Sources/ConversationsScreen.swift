@@ -88,14 +88,14 @@ private struct ConversationCell: View {
     }
 }
 
-#Preview {
-    let sender = HealthChatUser(
-        id: TestUtils.senderUser.id,
-        name: TestUtils.senderUser.name,
-        avatarURL: TestUtils.senderUser.avatarURL,
-        isCurrentUser: true
-    )
-    
-    let vm = ConversationsViewModel(user: sender, onConversationSelected: { _ in })
-    ConversationsScreen(viewModel: vm, onMessageSendAction: { _ in })
-}
+//#Preview {
+//    let sender = HealthChatUser(
+//        id: TestUtils.senderUser.id,
+//        name: TestUtils.senderUser.name,
+//        avatarURL: TestUtils.senderUser.avatarURL,
+//        isCurrentUser: true
+//    )
+//    
+//    let vm = ConversationsViewModel(user: sender, onConversationSelected: { _ in })
+//    ConversationsScreen(viewModel: vm, onMessageSendAction: { _ in })
+//}

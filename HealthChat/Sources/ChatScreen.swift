@@ -101,6 +101,6 @@ struct ChatScreen: View {
 //    }
 //}
 
-#Preview {
-    ChatScreen(onMessageSendAction: { _ in })
-}
+//#Preview {
+//    ChatScreen(onMessageSendAction: { _ in })
+//}
