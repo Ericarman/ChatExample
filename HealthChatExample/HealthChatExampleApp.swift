@@ -8,6 +8,7 @@
 import SwiftUI
 import HealthChat
 
+@available(iOS 17.0, *)
 @main
 struct HealthChatExampleApp: App {
     @State private var model = HealthChatModel.test
@@ -67,6 +68,7 @@ struct HealthChatExampleApp: App {
 }
 
 
+@available(iOS 17.0, *)
 private extension HealthChatModel {
     static var test: HealthChatModel {
         let user = HealthChatUser(
