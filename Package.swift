@@ -18,7 +18,7 @@ let package = Package(
 //        ),
     ],
     dependencies: [
-        .package(url: "https://github.com/EnesKaraosman/SwiftyChat.git", branch: "master")
+        .package(url: "https://github.com/Ericarman/SwiftyChat.git", branch: "master")
     ],
     targets: [
         .target(

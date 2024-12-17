@@ -21,10 +21,10 @@
     {
       "identity" : "swiftychat",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/EnesKaraosman/SwiftyChat.git",
+      "location" : "https://github.com/Ericarman/SwiftyChat.git",
       "state" : {
         "branch" : "master",
-        "revision" : "c6a9c529e707156cc0ffecd4f2f29ea71225be5f"
+        "revision" : "e9ae145bf43a0c0e2fd0c8b65028dce416afbf39"
       }
     },
     {
