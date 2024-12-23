@@ -18,6 +18,7 @@ struct ChatScreen: View {
     @EnvironmentObject private var model: HealthChatModel
     
     let onMessageSendAction: MessageSendAction
+    let onMessageEditAction: MessageSendAction
     
     var body: some View {
         VStack(spacing: 0) {
@@ -28,12 +29,47 @@ struct ChatScreen: View {
                 m.toMessage()
             }
             
-            ChatView(messages: messages) { message in
+            ChatView<EmptyView, EmptyView, DefaultMessageMenuAction>(messages: messages, chatType: .conversation, replyMode: .answer) { message in
                 Task {
                     let m = await HealthChatMessage(draft: message, user: model.user)
                     onMessageSendAction(m)
                 }
+            } messageMenuAction: {
+                selectedMenuAction,
+                defaultActionClosure,
+                message in
+                switch selectedMenuAction {
+                case .edit:
+                    defaultActionClosure(
+                        message,
+                        .edit(
+                            saveClosure: { editedText in
+                                var m = HealthChatMessage(from: message)
+                                m.text = editedText
+                                onMessageEditAction(m)
+                            })
+                    )
+                case .reply:
+                    defaultActionClosure(message, .reply)
+                }
             }
+            .setMediaPickerSelectionParameters(
+                .init(
+                    mediaType: .photo,
+                    selectionStyle: .checkmark,
+                    selectionLimit: nil,
+                    showFullscreenPreview: true
+                )
+            )
+            .mediaPickerTheme(
+                main: .init(
+                    text: .black,
+                    albumSelectionBackground: .black,
+                    fullscreenPhotoBackground: .black,
+                    cameraBackground: .black,
+                    cameraSelectionBackground: .black
+                )
+            )
         }
         .navigationBarHidden(true)
     }
@@ -132,6 +168,31 @@ extension HealthUser {
 }
 
 extension HealthChatMessage {
+    init(from message: Message) {
+        let attachments = message.attachments.map {
+            HealthAttachment(from: $0)
+        }
+        
+        let recording: HealthRecording? = if let recording = message.recording {
+            HealthRecording(from: recording)
+        } else { nil }
+        
+        let replyMessage: HealthReplyMessage? = if let reply = message.replyMessage {
+            HealthReplyMessage(from: reply)
+        } else { nil }
+        
+        self.init(
+            id: message.id,
+            text: message.text,
+            createdAt: message.createdAt,
+            sender: message.user.toHealthUser(),
+            status: HealthChatMessage.Status(from: message.status ?? .sending),
+            attachments: attachments,
+            recording: recording,
+            replyMessage: replyMessage
+        )
+    }
+    
     func toMessage() -> Message {
         let s: Message.Status? = switch status {
         case .error: Message.Status.error(.init(text: "", medias: [], recording: nil, replyMessage: nil, createdAt: creationDate))
@@ -350,6 +411,21 @@ extension HealthAttachmentType {
             self = .image
         case .video:
             self = .video
+        }
+    }
+}
+
+extension HealthChatMessage.Status {
+    init(from status: Message.Status) {
+        switch status {
+        case .sending:
+            self = .sending
+        case .sent:
+            self = .sent
+        case .read:
+            self = .read
+        case .error:
+            self = .error
         }
     }
 }

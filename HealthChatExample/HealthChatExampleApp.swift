@@ -27,6 +27,8 @@ struct HealthChatExampleApp: App {
                 chatModel: model,
                 onMessageSendAction: { message in
                     sendMessage(message)
+                }, onMessageEditAction: { message in
+                    editMessage(message)
                 }
             )
             
@@ -61,6 +63,12 @@ struct HealthChatExampleApp: App {
             }
             
             print(model.messages)
+        }
+    }
+    
+    private func editMessage(_ message: HealthChatMessage) {
+        if let idx = getMessageIdx(message) {
+            model.messages[idx] = message
         }
     }
     
