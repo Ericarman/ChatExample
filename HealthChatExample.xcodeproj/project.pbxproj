@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FE2DF3142D107B7400BD9E21 /* SwiftyChat in Frameworks */ = {isa = PBXBuildFile; productRef = FE2DF3132D107B7400BD9E21 /* SwiftyChat */; };
+		FE2DF37A2D196A6300BD9E21 /* ExyteChat in Frameworks */ = {isa = PBXBuildFile; productRef = FE2DF3792D196A6300BD9E21 /* ExyteChat */; };
+		FE2DF37D2D1972E900BD9E21 /* HealthAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2DF37C2D1972E900BD9E21 /* HealthAttachment.swift */; };
+		FE2DF37F2D19730500BD9E21 /* HealthUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2DF37E2D19730500BD9E21 /* HealthUser.swift */; };
+		FE2DF3812D19731700BD9E21 /* HealthChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2DF3802D19731700BD9E21 /* HealthChatMessage.swift */; };
+		FE2DF3832D19734A00BD9E21 /* HealthRecording.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2DF3822D19734A00BD9E21 /* HealthRecording.swift */; };
+		FE2DF3852D19736900BD9E21 /* HealthReplyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2DF3842D19736900BD9E21 /* HealthReplyMessage.swift */; };
 		FE74C5D12D086B46006054E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE74C5CB2D086B46006054E6 /* Preview Assets.xcassets */; };
 		FE74C5D22D086B46006054E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE74C5CD2D086B46006054E6 /* Assets.xcassets */; };
 		FE74C5D42D086B46006054E6 /* HealthChatExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74C5CF2D086B46006054E6 /* HealthChatExampleApp.swift */; };
@@ -17,12 +22,10 @@
 		FE74C5FC2D086BD2006054E6 /* HealthChat.docc in Sources */ = {isa = PBXBuildFile; fileRef = FE74C5FA2D086BD2006054E6 /* HealthChat.docc */; };
 		FE74C5FD2D086BD2006054E6 /* HealthChat.h in Headers */ = {isa = PBXBuildFile; fileRef = FE74C5F92D086BD2006054E6 /* HealthChat.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		FE74C6002D086C28006054E6 /* HealthChatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74C5FF2D086C28006054E6 /* HealthChatModel.swift */; };
-		FE74C6022D086F2D006054E6 /* ConversationsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74C6012D086F2D006054E6 /* ConversationsScreen.swift */; };
 		FE74C6072D0873A3006054E6 /* ChatScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74C6062D0873A3006054E6 /* ChatScreen.swift */; };
 		FE74C60B2D088230006054E6 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74C60A2D088230006054E6 /* TestUtils.swift */; };
 		FE74C60D2D08B25F006054E6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74C60C2D08B25F006054E6 /* ViewModel.swift */; };
 		FE74C6112D08B9FF006054E6 /* HealthChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74C60F2D08B9FF006054E6 /* HealthChatTests.swift */; };
-		FE7B49F42D08C11800DE5245 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE7B49F32D08C11800DE5245 /* TestUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +67,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FE2DF37C2D1972E900BD9E21 /* HealthAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthAttachment.swift; sourceTree = "<group>"; };
+		FE2DF37E2D19730500BD9E21 /* HealthUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthUser.swift; sourceTree = "<group>"; };
+		FE2DF3802D19731700BD9E21 /* HealthChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthChatMessage.swift; sourceTree = "<group>"; };
+		FE2DF3822D19734A00BD9E21 /* HealthRecording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthRecording.swift; sourceTree = "<group>"; };
+		FE2DF3842D19736900BD9E21 /* HealthReplyMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthReplyMessage.swift; sourceTree = "<group>"; };
 		FE74C5BA2D086B11006054E6 /* HealthChatExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthChatExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE74C5CB2D086B46006054E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FE74C5CD2D086B46006054E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,13 +81,11 @@
 		FE74C5F92D086BD2006054E6 /* HealthChat.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HealthChat.h; sourceTree = "<group>"; };
 		FE74C5FA2D086BD2006054E6 /* HealthChat.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = HealthChat.docc; sourceTree = "<group>"; };
 		FE74C5FF2D086C28006054E6 /* HealthChatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthChatModel.swift; sourceTree = "<group>"; };
-		FE74C6012D086F2D006054E6 /* ConversationsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationsScreen.swift; sourceTree = "<group>"; };
 		FE74C6062D0873A3006054E6 /* ChatScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatScreen.swift; sourceTree = "<group>"; };
 		FE74C60A2D088230006054E6 /* TestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
 		FE74C60C2D08B25F006054E6 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		FE74C60E2D08B9BE006054E6 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		FE74C60F2D08B9FF006054E6 /* HealthChatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthChatTests.swift; sourceTree = "<group>"; };
-		FE7B49F32D08C11800DE5245 /* TestUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE2DF3142D107B7400BD9E21 /* SwiftyChat in Frameworks */,
+				FE2DF37A2D196A6300BD9E21 /* ExyteChat in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,6 +116,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE2DF37B2D1972CF00BD9E21 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FE2DF3802D19731700BD9E21 /* HealthChatMessage.swift */,
+				FE2DF3842D19736900BD9E21 /* HealthReplyMessage.swift */,
+				FE2DF37E2D19730500BD9E21 /* HealthUser.swift */,
+				FE2DF37C2D1972E900BD9E21 /* HealthAttachment.swift */,
+				FE2DF3822D19734A00BD9E21 /* HealthRecording.swift */,
+				FE74C5FF2D086C28006054E6 /* HealthChatModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		FE74C5B12D086B11006054E6 = {
 			isa = PBXGroup;
 			children = (
@@ -163,11 +182,9 @@
 		FE74C5FE2D086BDE006054E6 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				FE2DF37B2D1972CF00BD9E21 /* Model */,
 				FE74C60C2D08B25F006054E6 /* ViewModel.swift */,
-				FE74C5FF2D086C28006054E6 /* HealthChatModel.swift */,
-				FE74C6012D086F2D006054E6 /* ConversationsScreen.swift */,
 				FE74C6062D0873A3006054E6 /* ChatScreen.swift */,
-				FE7B49F32D08C11800DE5245 /* TestUtils.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -230,7 +247,7 @@
 			);
 			name = HealthChat;
 			packageProductDependencies = (
-				FE2DF3132D107B7400BD9E21 /* SwiftyChat */,
+				FE2DF3792D196A6300BD9E21 /* ExyteChat */,
 			);
 			productName = HealthChat;
 			productReference = FE74C5DA2D086BC8006054E6 /* HealthChat.framework */;
@@ -289,7 +306,7 @@
 			mainGroup = FE74C5B12D086B11006054E6;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				FE2DF3122D107B7400BD9E21 /* XCRemoteSwiftPackageReference "SwiftyChat" */,
+				FE2DF3782D196A6300BD9E21 /* XCRemoteSwiftPackageReference "Chat" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FE74C5BB2D086B11006054E6 /* Products */;
@@ -344,10 +361,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE74C60D2D08B25F006054E6 /* ViewModel.swift in Sources */,
-				FE7B49F42D08C11800DE5245 /* TestUtils.swift in Sources */,
 				FE74C5FC2D086BD2006054E6 /* HealthChat.docc in Sources */,
-				FE74C6022D086F2D006054E6 /* ConversationsScreen.swift in Sources */,
+				FE2DF37F2D19730500BD9E21 /* HealthUser.swift in Sources */,
+				FE2DF3832D19734A00BD9E21 /* HealthRecording.swift in Sources */,
+				FE2DF3812D19731700BD9E21 /* HealthChatMessage.swift in Sources */,
+				FE2DF3852D19736900BD9E21 /* HealthReplyMessage.swift in Sources */,
 				FE74C6002D086C28006054E6 /* HealthChatModel.swift in Sources */,
+				FE2DF37D2D1972E900BD9E21 /* HealthAttachment.swift in Sources */,
 				FE74C6072D0873A3006054E6 /* ChatScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -515,7 +535,10 @@
 				DEVELOPMENT_TEAM = PPFJC4GB9Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Please give access to media library";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please give access to camera";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Please givev access to microphone";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please give access to photo library";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -546,7 +569,10 @@
 				DEVELOPMENT_TEAM = PPFJC4GB9Q;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSAppleMusicUsageDescription = "Please give access to media library";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Please give access to camera";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Please givev access to microphone";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Please give access to photo library";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -714,21 +740,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FE2DF3122D107B7400BD9E21 /* XCRemoteSwiftPackageReference "SwiftyChat" */ = {
+		FE2DF3782D196A6300BD9E21 /* XCRemoteSwiftPackageReference "Chat" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/EnesKaraosman/SwiftyChat.git";
+			repositoryURL = "https://github.com/Ericarman/Chat.git";
 			requirement = {
-				branch = master;
+				branch = main;
 				kind = branch;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FE2DF3132D107B7400BD9E21 /* SwiftyChat */ = {
+		FE2DF3792D196A6300BD9E21 /* ExyteChat */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FE2DF3122D107B7400BD9E21 /* XCRemoteSwiftPackageReference "SwiftyChat" */;
-			productName = SwiftyChat;
+			package = FE2DF3782D196A6300BD9E21 /* XCRemoteSwiftPackageReference "Chat" */;
+			productName = ExyteChat;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -25,9 +25,6 @@ struct HealthChatExampleApp: App {
         } else {
             let app = HealthChatApp(
                 chatModel: model,
-                onConversationSelected: { conversation in
-                    model.messages.removeAll()
-                },
                 onMessageSendAction: { message in
                     sendMessage(message)
                 }
@@ -69,34 +66,15 @@ struct HealthChatExampleApp: App {
 
 private extension HealthChatModel {
     static var test: HealthChatModel {
-        let user = HealthChatUser(
+        let user = HealthUser(
             id: UUID().uuidString,
-            name: "Bagration",
+            userName: "Bagration",
             avatarURL: nil,
             isCurrentUser: true
         )
         
-        let conversations = (0...10).map { idx in
-            let receiver = HealthChatUser(
-                id: "preview_user\(idx)",
-                name: "preview_user_name\(idx)",
-                avatarURL: nil,
-                isCurrentUser: false
-            )
-            
-            return HealthChatConversation(
-                id: UUID().uuidString,
-                title: "Walking hour",
-                imageURL: TestUtils.getAvatarURL(),
-                receiverUser: receiver,
-                messages: []
-            )
-        }
-        
         return HealthChatModel(
-            user: user,
-            conversations: conversations,
-            language: "en"
+            user: user, language: "en"
         )
     }
 }
