@@ -1,39 +1,48 @@
 {
   "pins" : [
     {
-      "identity" : "kingfisher",
+      "identity" : "activityindicatorview",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/onevcat/Kingfisher.git",
+      "location" : "https://github.com/exyte/ActivityIndicatorView",
       "state" : {
-        "revision" : "623e1595526a2034dc49eda264a4d174e90dac64",
-        "version" : "8.1.2"
+        "revision" : "9970fd0bb7a05dad0b6566ae1f56937716686b24",
+        "version" : "1.1.1"
       }
     },
     {
-      "identity" : "swiftuiektensions",
+      "identity" : "chat",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/EnesKaraosman/SwiftUIEKtensions.git",
+      "location" : "https://github.com/Ericarman/Chat.git",
       "state" : {
-        "revision" : "bf96c0d841d2bc81dac0d7e28aa9ab71cd7d6c2a",
-        "version" : "0.4.0"
+        "branch" : "main",
+        "revision" : "37623367e65dd4fc9ae5911807a963782b620ea9"
       }
     },
     {
-      "identity" : "swiftychat",
+      "identity" : "floatingbutton",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/Ericarman/SwiftyChat.git",
+      "location" : "https://github.com/exyte/FloatingButton",
       "state" : {
-        "branch" : "master",
-        "revision" : "e9ae145bf43a0c0e2fd0c8b65028dce416afbf39"
+        "revision" : "cf77c2f124df1423d90a9a1985e9b9ccfa4b9b3e",
+        "version" : "1.3.0"
       }
     },
     {
-      "identity" : "wrappinghstack",
+      "identity" : "mediapicker",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/dkk/WrappingHStack.git",
+      "location" : "https://github.com/exyte/MediaPicker.git",
       "state" : {
-        "revision" : "425d9488ba55f58f0b34498c64c054c77fc2a44b",
-        "version" : "2.2.11"
+        "revision" : "88769b1b69c2b5e5fa5b65522c08bc7b667a6cb8",
+        "version" : "2.2.3"
+      }
+    },
+    {
+      "identity" : "swiftui-introspect",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/siteline/swiftui-introspect",
+      "state" : {
+        "revision" : "807f73ce09a9b9723f12385e592b4e0aaebd3336",
+        "version" : "1.3.0"
       }
     }
   ],

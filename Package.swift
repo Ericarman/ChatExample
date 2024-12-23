@@ -18,13 +18,13 @@ let package = Package(
 //        ),
     ],
     dependencies: [
-        .package(url: "https://github.com/Ericarman/SwiftyChat.git", branch: "master")
+        .package(url: "https://github.com/Ericarman/Chat.git", branch: "main")
     ],
     targets: [
         .target(
             name: "HealthChatExample",
             dependencies: [
-                .product(name: "SwiftyChat", package: "SwiftyChat")
+                .product(name: "ExyteChat", package: "Chat")
             ],
             path: "HealthChat/Sources"
         ),

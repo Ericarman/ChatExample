@@ -5,6 +5,7 @@
 //  Created by Eric Hovhannisyan on 23.12.24.
 //
 
+import Foundation
 
 public struct HealthReplyMessage: Codable, Identifiable, Hashable, Sendable {
     public static func == (lhs: Self, rhs: Self) -> Bool {
