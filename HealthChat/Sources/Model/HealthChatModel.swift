@@ -54,6 +54,7 @@ public final class HealthChatApp {
         return ChatScreen { [weak self] message in
             self?.onMessageSendAction(message)
         }
+        .preferredColorScheme(.light)
         .environmentObject(chatModel)
     }
 }

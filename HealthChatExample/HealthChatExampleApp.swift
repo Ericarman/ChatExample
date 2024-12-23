@@ -74,8 +74,8 @@ private extension HealthChatModel {
     static var test: HealthChatModel {
         let user = HealthUser(
             id: UUID().uuidString,
-            userName: "Bagration",
-            avatarURL: nil,
+            userName: "Զավեն Քոլոյան",
+            avatarURL: TestUtils.getAvatarURL(),
             userDescription: "Wigmore Clinic",
             isCurrentUser: true
         )

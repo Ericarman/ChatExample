@@ -14,35 +14,48 @@ enum MessageError: Error {
 }
 
 struct ChatScreen: View {
+    @Environment(\.dismiss) private var dismiss
     @EnvironmentObject private var model: HealthChatModel
-        
+    
     let onMessageSendAction: MessageSendAction
     
     var body: some View {
-        let messages = model.messages.map { m in
-            m.toMessage()
-        }
-        
-        ChatView(messages: messages) { message in
-            Task {
-                let m = await HealthChatMessage(draft: message, user: model.user)
-                onMessageSendAction(m)
+        VStack(spacing: 0) {
+            navigationBar
+                .padding(.bottom, 12)
+            
+            let messages = model.messages.map { m in
+                m.toMessage()
             }
-        }
-        .toolbar {
-            ToolbarItem(placement: .principal) {
-                HStack(spacing: 8) {
-                    avatarImage
-                    
-                    userInfo
-                    
-                    Spacer()
-                    
-                    expirationDate
+            
+            ChatView(messages: messages) { message in
+                Task {
+                    let m = await HealthChatMessage(draft: message, user: model.user)
+                    onMessageSendAction(m)
                 }
             }
         }
-        
+        .navigationBarHidden(true)
+    }
+    
+    private var navigationBar: some View {
+        HStack(spacing: 8) {
+            Button {
+                dismiss()
+            } label: {
+                Image(systemName: "chevron.backward")
+            }
+            
+            avatarImage
+            
+            userInfo
+            
+            Spacer()
+            
+            expirationDate
+        }
+        .padding(.horizontal, 16)
+        .frame(height: 44)
     }
     
     private var avatarImage: some View {
@@ -51,7 +64,7 @@ struct ChatScreen: View {
             case .empty:
                 Color.gray
             case .success(let image):
-                image
+                image.resizable()
             case .failure:
                 Color.gray
             @unknown default:
