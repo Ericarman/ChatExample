@@ -29,6 +29,69 @@ struct ChatScreen: View {
                 onMessageSendAction(m)
             }
         }
+        .toolbar {
+            ToolbarItem(placement: .principal) {
+                HStack(spacing: 8) {
+                    avatarImage
+                    
+                    userInfo
+                    
+                    Spacer()
+                    
+                    expirationDate
+                }
+            }
+        }
+        
+    }
+    
+    private var avatarImage: some View {
+        AsyncImage(url: model.user.avatarURL) { phase in
+            switch phase {
+            case .empty:
+                Color.gray
+            case .success(let image):
+                image
+            case .failure:
+                Color.gray
+            @unknown default:
+                Color.gray
+            }
+        }
+        .scaledToFill()
+        .frame(width: 32, height: 32)
+        .background()
+        .clipShape(.circle)
+    }
+    
+    private var userInfo: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Text(model.user.userName)
+                .font(.title3)
+                .fontWeight(.bold)
+                .foregroundStyle(Color(hex: "#374151"))
+                .lineLimit(1)
+            
+            if let description = model.user.userDescription {
+                Text(description)
+                    .font(.subheadline)
+                    .fontWeight(.bold)
+                    .foregroundStyle(Color(hex: "#6B7280"))
+                    .lineLimit(1)
+            }
+        }
+    }
+    
+    private var expirationDate: some View {
+        HStack(spacing: 4) {
+            Image(systemName: "clock")
+                .foregroundStyle(.tint)
+                .imageScale(.small)
+            
+            Text(Date.now.formattedDifference(to: model.expirationDate))
+                .font(.subheadline)
+                .foregroundStyle(.tint)
+        }
     }
 }
 
@@ -38,6 +101,7 @@ extension User {
             id: id,
             userName: name,
             avatarURL: avatarURL,
+            userDescription: nil,
             isCurrentUser: isCurrentUser
         )
     }

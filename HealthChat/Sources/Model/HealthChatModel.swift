@@ -15,14 +15,18 @@ public final class HealthChatModel: ObservableObject {
     public var user: HealthUser
     @Published
     public var messages: [HealthChatMessage] = []
+    @Published
+    public var expirationDate: Date
     
     public let language: String
     
     public init(
         user: HealthUser,
+        expirationDate: Date,
         language: String
     ) {
         self.user = user
+        self.expirationDate = expirationDate
         self.language = language
     }
 }

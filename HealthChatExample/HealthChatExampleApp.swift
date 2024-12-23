@@ -21,7 +21,7 @@ struct HealthChatExampleApp: App {
     
     private func createApp() -> some View {
         if let app {
-            return app.createView()
+            return rootView(app: app)
         } else {
             let app = HealthChatApp(
                 chatModel: model,
@@ -32,7 +32,13 @@ struct HealthChatExampleApp: App {
             
             self.app = app
             
-            return app.createView()
+            return rootView(app: app)
+        }
+    }
+    
+    private func rootView(app: HealthChatApp) -> some View {
+        NavigationView {
+            app.createView()
         }
     }
     
@@ -70,11 +76,14 @@ private extension HealthChatModel {
             id: UUID().uuidString,
             userName: "Bagration",
             avatarURL: nil,
+            userDescription: "Wigmore Clinic",
             isCurrentUser: true
         )
         
+        let expirationDate = Date.now.addingTimeInterval(60 * 60 * 24 * 7)
+        
         return HealthChatModel(
-            user: user, language: "en"
+            user: user, expirationDate: expirationDate, language: "en"
         )
     }
 }

@@ -23,7 +23,7 @@ public struct HealthChatMessage: Identifiable, Sendable {
     public var attachments: [HealthAttachment]
     public var recording: HealthRecording?
     public var replyMessage: HealthReplyMessage?
-        
+    
     public init(
         id: String,
         text: String,
