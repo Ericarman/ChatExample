@@ -13,7 +13,7 @@
 		FE2DF3812D19731700BD9E21 /* HealthChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2DF3802D19731700BD9E21 /* HealthChatMessage.swift */; };
 		FE2DF3832D19734A00BD9E21 /* HealthRecording.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2DF3822D19734A00BD9E21 /* HealthRecording.swift */; };
 		FE2DF3852D19736900BD9E21 /* HealthReplyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2DF3842D19736900BD9E21 /* HealthReplyMessage.swift */; };
-		FE2DF3872D199EFA00BD9E21 /* DateMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2DF3862D199EFA00BD9E21 /* DateMapper.swift */; };
+		FE2DF3872D199EFA00BD9E21 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2DF3862D199EFA00BD9E21 /* DateExtensions.swift */; };
 		FE74C5D12D086B46006054E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE74C5CB2D086B46006054E6 /* Preview Assets.xcassets */; };
 		FE74C5D22D086B46006054E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE74C5CD2D086B46006054E6 /* Assets.xcassets */; };
 		FE74C5D42D086B46006054E6 /* HealthChatExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74C5CF2D086B46006054E6 /* HealthChatExampleApp.swift */; };
@@ -73,7 +73,7 @@
 		FE2DF3802D19731700BD9E21 /* HealthChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthChatMessage.swift; sourceTree = "<group>"; };
 		FE2DF3822D19734A00BD9E21 /* HealthRecording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthRecording.swift; sourceTree = "<group>"; };
 		FE2DF3842D19736900BD9E21 /* HealthReplyMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthReplyMessage.swift; sourceTree = "<group>"; };
-		FE2DF3862D199EFA00BD9E21 /* DateMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateMapper.swift; sourceTree = "<group>"; };
+		FE2DF3862D199EFA00BD9E21 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		FE74C5BA2D086B11006054E6 /* HealthChatExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthChatExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE74C5CB2D086B46006054E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FE74C5CD2D086B46006054E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 		FE2DF37B2D1972CF00BD9E21 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				FE2DF3862D199EFA00BD9E21 /* DateMapper.swift */,
+				FE2DF3862D199EFA00BD9E21 /* DateExtensions.swift */,
 				FE2DF3802D19731700BD9E21 /* HealthChatMessage.swift */,
 				FE2DF3842D19736900BD9E21 /* HealthReplyMessage.swift */,
 				FE2DF37E2D19730500BD9E21 /* HealthUser.swift */,
@@ -371,7 +371,7 @@
 				FE2DF3852D19736900BD9E21 /* HealthReplyMessage.swift in Sources */,
 				FE74C6002D086C28006054E6 /* HealthChatModel.swift in Sources */,
 				FE2DF37D2D1972E900BD9E21 /* HealthAttachment.swift in Sources */,
-				FE2DF3872D199EFA00BD9E21 /* DateMapper.swift in Sources */,
+				FE2DF3872D199EFA00BD9E21 /* DateExtensions.swift in Sources */,
 				FE74C6072D0873A3006054E6 /* ChatScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
