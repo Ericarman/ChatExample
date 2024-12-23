@@ -122,7 +122,6 @@ extension HealthChatMessage {
                 createdAt: draft.createdAt,
                 sender: user,
                 status: .sending,
-                isSender: true,
                 attachments: attachments,
                 recording: recording,
                 replyMessage: replyMessage
@@ -134,7 +133,6 @@ extension HealthChatMessage {
                 createdAt: draft.createdAt,
                 sender: user,
                 status: .error,
-                isSender: true,
                 attachments: []
             )
         }

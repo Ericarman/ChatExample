@@ -20,7 +20,6 @@ public struct HealthChatMessage: Identifiable, Sendable {
     public var creationDate: Date
     public var sender: HealthUser
     public var status: Status
-    public var isSender: Bool
     public var attachments: [HealthAttachment]
     public var recording: HealthRecording?
     public var replyMessage: HealthReplyMessage?
@@ -31,7 +30,6 @@ public struct HealthChatMessage: Identifiable, Sendable {
         createdAt creationDate: Date,
         sender: HealthUser,
         status: Status,
-        isSender: Bool,
         attachments: [HealthAttachment],
         recording: HealthRecording? = nil,
         replyMessage: HealthReplyMessage? = nil
@@ -41,7 +39,6 @@ public struct HealthChatMessage: Identifiable, Sendable {
         self.creationDate = creationDate
         self.sender = sender
         self.status = status
-        self.isSender = isSender
         self.attachments = attachments
         self.recording = recording
         self.replyMessage = replyMessage

@@ -47,7 +47,6 @@ public struct HealthReplyMessage: Codable, Identifiable, Hashable, Sendable {
             createdAt: createdAt,
             sender: user,
             status: .sending,
-            isSender: true,
             attachments: attachments
         )
     }
