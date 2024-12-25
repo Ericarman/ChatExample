@@ -42,16 +42,13 @@ public typealias MessageSendAction = (HealthChatMessage) -> Void
 public final class HealthChatApp {
     let chatModel: HealthChatModel
     let onMessageSendAction: MessageSendAction
-    let onMessageEditAction: MessageSendAction
     
     public init(
         chatModel: HealthChatModel,
-        onMessageSendAction: @escaping MessageSendAction,
-        onMessageEditAction: @escaping MessageSendAction
+        onMessageSendAction: @escaping MessageSendAction
     ) {
         self.chatModel = chatModel
         self.onMessageSendAction = onMessageSendAction
-        self.onMessageEditAction = onMessageEditAction
     }
     
     public func createViewController() -> some UIViewController {
@@ -61,8 +58,6 @@ public final class HealthChatApp {
     public func createView() -> some View {
         return ChatScreen { [weak self] message in
             self?.onMessageSendAction(message)
-        } onMessageEditAction: { [weak self] message in
-            self?.onMessageEditAction(message)
         }
         .preferredColorScheme(.light)
         .environmentObject(chatModel)

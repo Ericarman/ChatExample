@@ -29,7 +29,6 @@ struct ChatScreen: View {
     @EnvironmentObject private var model: HealthChatModel
     
     let onMessageSendAction: MessageSendAction
-    let onMessageEditAction: MessageSendAction
     
     var availableInputType: AvailableInputType {
         switch model.status {
