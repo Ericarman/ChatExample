@@ -82,7 +82,6 @@ private extension HealthChatModel {
             id: UUID().uuidString,
             userName: "Զավեն Քոլոյան",
             avatarURL: TestUtils.getAvatarURL(),
-            userDescription: "Wigmore Clinic",
             isCurrentUser: true
         )
         

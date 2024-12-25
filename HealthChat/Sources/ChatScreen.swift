@@ -88,7 +88,6 @@ extension User {
             id: id,
             userName: name,
             avatarURL: avatarURL,
-            userDescription: nil,
             isCurrentUser: isCurrentUser
         )
     }
