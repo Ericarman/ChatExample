@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Observation
 @_implementationOnly import ExyteChat
 
 enum MessageError: Error {
@@ -20,11 +19,17 @@ struct ChatScreen: View {
     let onMessageSendAction: MessageSendAction
     let onMessageEditAction: MessageSendAction
     
+    var availableInputType: AvailableInputType {
+        switch model.status {
+        case .active:
+            return .full
+        case .inactive:
+            return .none
+        }
+    }
+    
     var body: some View {
         VStack(spacing: 0) {
-            navigationBar
-                .padding(.bottom, 12)
-            
             let messages = model.messages.map { m in
                 m.toMessage()
             }
@@ -53,6 +58,8 @@ struct ChatScreen: View {
                     defaultActionClosure(message, .reply)
                 }
             }
+            .setAvailableInput(availableInputType)
+            .showMessageMenuOnLongPress(false)
             .setMediaPickerSelectionParameters(
                 .init(
                     mediaType: .photo,
@@ -70,76 +77,6 @@ struct ChatScreen: View {
                     cameraSelectionBackground: .black
                 )
             )
-        }
-        .navigationBarHidden(true)
-    }
-    
-    private var navigationBar: some View {
-        HStack(spacing: 8) {
-            Button {
-                dismiss()
-            } label: {
-                Image(systemName: "chevron.backward")
-            }
-            
-            avatarImage
-            
-            userInfo
-            
-            Spacer()
-            
-            expirationDate
-        }
-        .padding(.horizontal, 16)
-        .frame(height: 44)
-    }
-    
-    private var avatarImage: some View {
-        AsyncImage(url: model.user.avatarURL) { phase in
-            switch phase {
-            case .empty:
-                Color.gray
-            case .success(let image):
-                image.resizable()
-            case .failure:
-                Color.gray
-            @unknown default:
-                Color.gray
-            }
-        }
-        .scaledToFill()
-        .frame(width: 32, height: 32)
-        .background()
-        .clipShape(.circle)
-    }
-    
-    private var userInfo: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            Text(model.user.userName)
-                .font(.title3)
-                .fontWeight(.bold)
-                .foregroundStyle(Color(hex: "#374151"))
-                .lineLimit(1)
-            
-            if let description = model.user.userDescription {
-                Text(description)
-                    .font(.subheadline)
-                    .fontWeight(.bold)
-                    .foregroundStyle(Color(hex: "#6B7280"))
-                    .lineLimit(1)
-            }
-        }
-    }
-    
-    private var expirationDate: some View {
-        HStack(spacing: 4) {
-            Image(systemName: "clock")
-                .foregroundStyle(.tint)
-                .imageScale(.small)
-            
-            Text(Date.now.formattedDifference(to: model.expirationDate))
-                .font(.subheadline)
-                .foregroundStyle(.tint)
         }
     }
 }

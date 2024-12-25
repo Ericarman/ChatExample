@@ -61,8 +61,6 @@ struct HealthChatExampleApp: App {
                 
                 // TODO: Maybe show some toasts
             }
-            
-            print(model.messages)
         }
     }
     
@@ -88,10 +86,8 @@ private extension HealthChatModel {
             isCurrentUser: true
         )
         
-        let expirationDate = Date.now.addingTimeInterval(60 * 60 * 24 * 7)
-        
         return HealthChatModel(
-            user: user, expirationDate: expirationDate, language: "en"
+            user: user, status: .active, language: "en"
         )
     }
 }

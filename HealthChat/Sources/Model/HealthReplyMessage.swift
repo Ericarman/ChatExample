@@ -40,7 +40,7 @@ public struct HealthReplyMessage: Codable, Identifiable, Hashable, Sendable {
         self.recording = recording
     }
 
-    func toMessage() -> HealthChatMessage {
+    public func toMessage() -> HealthChatMessage {
         HealthChatMessage(
             id: id,
             text: text,

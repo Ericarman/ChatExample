@@ -9,6 +9,11 @@ import Foundation
 import SwiftUI
 import Combine
 
+public enum HealthChatStatus {
+    case active
+    case inactive
+}
+
 @MainActor
 public final class HealthChatModel: ObservableObject {
     @Published
@@ -16,17 +21,17 @@ public final class HealthChatModel: ObservableObject {
     @Published
     public var messages: [HealthChatMessage] = []
     @Published
-    public var expirationDate: Date
+    public var status: HealthChatStatus
     
     public let language: String
     
     public init(
         user: HealthUser,
-        expirationDate: Date,
+        status: HealthChatStatus,
         language: String
     ) {
         self.user = user
-        self.expirationDate = expirationDate
+        self.status = status
         self.language = language
     }
 }
