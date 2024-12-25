@@ -14,6 +14,11 @@
 		FE2DF3832D19734A00BD9E21 /* HealthRecording.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2DF3822D19734A00BD9E21 /* HealthRecording.swift */; };
 		FE2DF3852D19736900BD9E21 /* HealthReplyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2DF3842D19736900BD9E21 /* HealthReplyMessage.swift */; };
 		FE2DF3872D199EFA00BD9E21 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2DF3862D199EFA00BD9E21 /* DateExtensions.swift */; };
+		FE2DF38E2D1C332500BD9E21 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FE2DF38D2D1C332500BD9E21 /* Localizable.xcstrings */; };
+		FE2DF3902D1C337000BD9E21 /* String+Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2DF38F2D1C337000BD9E21 /* String+Localization.swift */; };
+		FE2DF3922D1C339E00BD9E21 /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2DF3912D1C339E00BD9E21 /* LocalizationManager.swift */; };
+		FE2DF3942D1C33B200BD9E21 /* BundleFinder.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2DF3932D1C33B200BD9E21 /* BundleFinder.swift */; };
+		FE2DF3962D1C33D100BD9E21 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2DF3952D1C33D100BD9E21 /* Logger.swift */; };
 		FE74C5D12D086B46006054E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE74C5CB2D086B46006054E6 /* Preview Assets.xcassets */; };
 		FE74C5D22D086B46006054E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE74C5CD2D086B46006054E6 /* Assets.xcassets */; };
 		FE74C5D42D086B46006054E6 /* HealthChatExampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74C5CF2D086B46006054E6 /* HealthChatExampleApp.swift */; };
@@ -74,6 +79,11 @@
 		FE2DF3822D19734A00BD9E21 /* HealthRecording.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthRecording.swift; sourceTree = "<group>"; };
 		FE2DF3842D19736900BD9E21 /* HealthReplyMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthReplyMessage.swift; sourceTree = "<group>"; };
 		FE2DF3862D199EFA00BD9E21 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		FE2DF38D2D1C332500BD9E21 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		FE2DF38F2D1C337000BD9E21 /* String+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localization.swift"; sourceTree = "<group>"; };
+		FE2DF3912D1C339E00BD9E21 /* LocalizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
+		FE2DF3932D1C33B200BD9E21 /* BundleFinder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleFinder.swift; sourceTree = "<group>"; };
+		FE2DF3952D1C33D100BD9E21 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		FE74C5BA2D086B11006054E6 /* HealthChatExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HealthChatExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE74C5CB2D086B46006054E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FE74C5CD2D086B46006054E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -132,6 +142,25 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		FE2DF38C2D1C331900BD9E21 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				FE2DF3912D1C339E00BD9E21 /* LocalizationManager.swift */,
+				FE2DF38F2D1C337000BD9E21 /* String+Localization.swift */,
+				FE2DF38D2D1C332500BD9E21 /* Localizable.xcstrings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		FE2DF3972D1C33D800BD9E21 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				FE2DF3932D1C33B200BD9E21 /* BundleFinder.swift */,
+				FE2DF3952D1C33D100BD9E21 /* Logger.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		FE74C5B12D086B11006054E6 = {
 			isa = PBXGroup;
 			children = (
@@ -185,6 +214,8 @@
 		FE74C5FE2D086BDE006054E6 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				FE2DF3972D1C33D800BD9E21 /* Common */,
+				FE2DF38C2D1C331900BD9E21 /* Localization */,
 				FE2DF37B2D1972CF00BD9E21 /* Model */,
 				FE74C60C2D08B25F006054E6 /* ViewModel.swift */,
 				FE74C6062D0873A3006054E6 /* ChatScreen.swift */,
@@ -305,6 +336,8 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
+				hy,
 			);
 			mainGroup = FE74C5B12D086B11006054E6;
 			minimizedProjectReferenceProxies = 1;
@@ -337,6 +370,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE2DF38E2D1C332500BD9E21 /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,11 +401,15 @@
 				FE74C5FC2D086BD2006054E6 /* HealthChat.docc in Sources */,
 				FE2DF37F2D19730500BD9E21 /* HealthUser.swift in Sources */,
 				FE2DF3832D19734A00BD9E21 /* HealthRecording.swift in Sources */,
+				FE2DF3922D1C339E00BD9E21 /* LocalizationManager.swift in Sources */,
 				FE2DF3812D19731700BD9E21 /* HealthChatMessage.swift in Sources */,
 				FE2DF3852D19736900BD9E21 /* HealthReplyMessage.swift in Sources */,
+				FE2DF3942D1C33B200BD9E21 /* BundleFinder.swift in Sources */,
 				FE74C6002D086C28006054E6 /* HealthChatModel.swift in Sources */,
 				FE2DF37D2D1972E900BD9E21 /* HealthAttachment.swift in Sources */,
 				FE2DF3872D199EFA00BD9E21 /* DateExtensions.swift in Sources */,
+				FE2DF3962D1C33D100BD9E21 /* Logger.swift in Sources */,
+				FE2DF3902D1C337000BD9E21 /* String+Localization.swift in Sources */,
 				FE74C6072D0873A3006054E6 /* ChatScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -464,6 +502,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 6.0;
@@ -522,6 +561,7 @@
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_STRICT_CONCURRENCY = complete;
 				SWIFT_VERSION = 6.0;
 				VALIDATE_PRODUCT = YES;

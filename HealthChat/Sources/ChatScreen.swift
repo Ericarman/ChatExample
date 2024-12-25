@@ -12,6 +12,18 @@ enum MessageError: Error {
     case failedToCreateAttachment
 }
 
+enum CustomMessageMenuAction: MessageMenuAction {
+    case reply
+    
+    func title() -> String {
+        "reply".localized()
+    }
+    
+    func icon() -> Image {
+        Image(systemName: "arrowshape.turn.up.left")
+    }
+}
+
 struct ChatScreen: View {
     @Environment(\.dismiss) private var dismiss
     @EnvironmentObject private var model: HealthChatModel
@@ -34,7 +46,7 @@ struct ChatScreen: View {
                 m.toMessage()
             }
             
-            ChatView<EmptyView, EmptyView, DefaultMessageMenuAction>(messages: messages, chatType: .conversation, replyMode: .answer) { message in
+            ChatView<EmptyView, EmptyView, CustomMessageMenuAction>(messages: messages, chatType: .conversation, replyMode: .answer) { message in
                 Task {
                     let m = await HealthChatMessage(draft: message, user: model.user)
                     onMessageSendAction(m)
@@ -44,22 +56,11 @@ struct ChatScreen: View {
                 defaultActionClosure,
                 message in
                 switch selectedMenuAction {
-                case .edit:
-                    defaultActionClosure(
-                        message,
-                        .edit(
-                            saveClosure: { editedText in
-                                var m = HealthChatMessage(from: message)
-                                m.text = editedText
-                                onMessageEditAction(m)
-                            })
-                    )
                 case .reply:
                     defaultActionClosure(message, .reply)
                 }
             }
             .setAvailableInput(availableInputType)
-            .showMessageMenuOnLongPress(false)
             .setMediaPickerSelectionParameters(
                 .init(
                     mediaType: .photo,
