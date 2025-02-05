@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE1A6D472D52561400634D2D /* ContactUsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1A6D462D52561400634D2D /* ContactUsScreen.swift */; };
+		FE1A6D4D2D53900300634D2D /* DSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1A6D4C2D53900300634D2D /* DSColor.swift */; };
 		FE2DF37A2D196A6300BD9E21 /* ExyteChat in Frameworks */ = {isa = PBXBuildFile; productRef = FE2DF3792D196A6300BD9E21 /* ExyteChat */; };
 		FE2DF37D2D1972E900BD9E21 /* HealthAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2DF37C2D1972E900BD9E21 /* HealthAttachment.swift */; };
 		FE2DF37F2D19730500BD9E21 /* HealthUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2DF37E2D19730500BD9E21 /* HealthUser.swift */; };
@@ -73,6 +75,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FE1A6D462D52561400634D2D /* ContactUsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsScreen.swift; sourceTree = "<group>"; };
+		FE1A6D4C2D53900300634D2D /* DSColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSColor.swift; sourceTree = "<group>"; };
 		FE2DF37C2D1972E900BD9E21 /* HealthAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthAttachment.swift; sourceTree = "<group>"; };
 		FE2DF37E2D19730500BD9E21 /* HealthUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthUser.swift; sourceTree = "<group>"; };
 		FE2DF3802D19731700BD9E21 /* HealthChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthChatMessage.swift; sourceTree = "<group>"; };
@@ -128,6 +132,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FE1A6D442D5255F900634D2D /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				FE74C6062D0873A3006054E6 /* ChatScreen.swift */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		FE1A6D452D52560400634D2D /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				FE1A6D462D52561400634D2D /* ContactUsScreen.swift */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
 		FE2DF37B2D1972CF00BD9E21 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,6 +175,7 @@
 		FE2DF3972D1C33D800BD9E21 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				FE1A6D4C2D53900300634D2D /* DSColor.swift */,
 				FE2DF3932D1C33B200BD9E21 /* BundleFinder.swift */,
 				FE2DF3952D1C33D100BD9E21 /* Logger.swift */,
 			);
@@ -218,7 +239,8 @@
 				FE2DF38C2D1C331900BD9E21 /* Localization */,
 				FE2DF37B2D1972CF00BD9E21 /* Model */,
 				FE74C60C2D08B25F006054E6 /* ViewModel.swift */,
-				FE74C6062D0873A3006054E6 /* ChatScreen.swift */,
+				FE1A6D442D5255F900634D2D /* Chat */,
+				FE1A6D452D52560400634D2D /* Contact */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -408,8 +430,10 @@
 				FE74C6002D086C28006054E6 /* HealthChatModel.swift in Sources */,
 				FE2DF37D2D1972E900BD9E21 /* HealthAttachment.swift in Sources */,
 				FE2DF3872D199EFA00BD9E21 /* DateExtensions.swift in Sources */,
+				FE1A6D472D52561400634D2D /* ContactUsScreen.swift in Sources */,
 				FE2DF3962D1C33D100BD9E21 /* Logger.swift in Sources */,
 				FE2DF3902D1C337000BD9E21 /* String+Localization.swift in Sources */,
+				FE1A6D4D2D53900300634D2D /* DSColor.swift in Sources */,
 				FE74C6072D0873A3006054E6 /* ChatScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

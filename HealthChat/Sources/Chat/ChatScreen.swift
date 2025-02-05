@@ -30,15 +30,6 @@ struct ChatScreen: View {
     
     let onMessageSendAction: MessageSendAction
     
-    var availableInputType: AvailableInputType {
-        switch model.status {
-        case .active:
-            return .full
-        case .inactive:
-            return .none
-        }
-    }
-    
     var body: some View {
         VStack(spacing: 0) {
             let messages = model.messages.map { m in
@@ -59,7 +50,7 @@ struct ChatScreen: View {
                     defaultActionClosure(message, .reply)
                 }
             }
-            .setAvailableInput(availableInputType)
+            .setAvailableInput(.full)
             .setMediaPickerSelectionParameters(
                 .init(
                     mediaType: .photo,
@@ -77,6 +68,8 @@ struct ChatScreen: View {
                     cameraSelectionBackground: .black
                 )
             )
+            .disabled(model.status == .inactive)
+            .opacity(model.status == .inactive ? 0.5 : 1.0)
         }
     }
 }

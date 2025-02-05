@@ -15,7 +15,8 @@ struct HealthChatExampleApp: App {
     
     var body: some Scene {
         WindowGroup {
-            createApp()
+            ContactUsScreen()
+//            createApp()
         }
     }
     

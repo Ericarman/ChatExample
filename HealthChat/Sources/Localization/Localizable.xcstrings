@@ -1,6 +1,75 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
+    "call" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Call"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Զանգել"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Позвонить"
+          }
+        }
+      }
+    },
+    "contact_us" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Contact Us"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Կապ մեզ հետ"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Свяжитесь с нами"
+          }
+        }
+      }
+    },
+    "for_questions_contact_message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "For questions, concerns, or any suggestions please contact us at the following number."
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Հարցերի, առաջարկությունների կամ բողոքի դեպքում կարող եք կապ հաստատել մեզ հետ։"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "По любым вопросам, замечаниям или предложениям, пожалуйста, свяжитесь с нами по следующему номеру."
+          }
+        }
+      }
+    },
     "reply" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -8,6 +77,18 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Reply"
+          }
+        },
+        "hy" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Պատասխանել"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ответить"
           }
         }
       }
