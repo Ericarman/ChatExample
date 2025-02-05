@@ -85,18 +85,3 @@ public struct ContactUsScreen: View {
         openURL(url)
     }
 }
-
-#Preview {
-    if #available(iOS 16, *) {
-        NavigationView {
-            VStack {
-                
-            }.sheet(isPresented: .constant(true)) {
-                VStack(spacing: 0) {
-                    ContactUsScreen()
-                    Spacer()
-                }
-            }
-        }
-    }
-}
