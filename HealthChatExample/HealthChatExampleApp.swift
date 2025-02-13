@@ -15,8 +15,8 @@ struct HealthChatExampleApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContactUsScreen()
-//            createApp()
+//            ContactUsScreen()
+            createApp()
         }
     }
     
@@ -68,18 +68,43 @@ struct HealthChatExampleApp: App {
     }
 }
 
-
 private extension HealthChatModel {
     static var test: HealthChatModel {
-        let user = HealthUser(
+        let user = HealthUser.test
+        
+        
+        let model = HealthChatModel(
+            user: user, status: .inactive, language: "en"
+        )
+        model.messages = HealthChatMessage.testMessagesList
+        return model
+    }
+}
+
+private extension HealthUser {
+    static var test: HealthUser {
+        HealthUser(
             id: UUID().uuidString,
             userName: "Զավեն Քոլոյան",
             avatarURL: TestUtils.getAvatarURL(),
             isCurrentUser: true
         )
-        
-        return HealthChatModel(
-            user: user, status: .active, language: "en"
-        )
+    }
+}
+
+private extension HealthChatMessage {
+    static var testMessagesList: [HealthChatMessage] {
+        (1...50).map { _ in
+            HealthChatMessage(
+                id: UUID().uuidString,
+                text: UUID().uuidString,
+                createdAt: .now,
+                sender: HealthUser.test,
+                status: .sent,
+                attachments: [.init(id: UUID().uuidString, thumbnail: URL(string: "https://www.google.com/imgres?q=%D5%8D%D5%A1%D5%B4%D5%BE%D5%A5%D5%AC%20%D5%80%D5%A1%D5%B5%D6%80%D5%A1%D5%BA%D5%A5%D5%BF%D5%B5%D5%A1%D5%B6%20linkedin&imgurl=https%3A%2F%2Fmedia.licdn.com%2Fdms%2Fimage%2Fv2%2FD4E03AQE6zb8vjmsvAg%2Fprofile-displayphoto-shrink_200_200%2Fprofile-displayphoto-shrink_200_200%2F0%2F1703945913671%3Fe%3D2147483647%26v%3Dbeta%26t%3DwY2chxAKzdhQsohEmc2ljKzE8oH53om9OKbgmTZAGa4&imgrefurl=https%3A%2F%2Fam.linkedin.com%2Fin%2Fhayrapetyansami&docid=0y0FTC5rfqWHrM&tbnid=TjSnleW8P-4y8M&vet=12ahUKEwinwqXjusCLAxW6Q_EDHU0bCFIQM3oECBwQAA..i&w=200&h=200&hcb=2&ved=2ahUKEwinwqXjusCLAxW6Q_EDHU0bCFIQM3oECBwQAA")!,
+                                    full: URL(string: "https://www.google.com/imgres?q=%D5%8D%D5%A1%D5%B4%D5%BE%D5%A5%D5%AC%20%D5%80%D5%A1%D5%B5%D6%80%D5%A1%D5%BA%D5%A5%D5%BF%D5%B5%D5%A1%D5%B6%20linkedin&imgurl=https%3A%2F%2Fmedia.licdn.com%2Fdms%2Fimage%2Fv2%2FD4E03AQE6zb8vjmsvAg%2Fprofile-displayphoto-shrink_200_200%2Fprofile-displayphoto-shrink_200_200%2F0%2F1703945913671%3Fe%3D2147483647%26v%3Dbeta%26t%3DwY2chxAKzdhQsohEmc2ljKzE8oH53om9OKbgmTZAGa4&imgrefurl=https%3A%2F%2Fam.linkedin.com%2Fin%2Fhayrapetyansami&docid=0y0FTC5rfqWHrM&tbnid=TjSnleW8P-4y8M&vet=12ahUKEwinwqXjusCLAxW6Q_EDHU0bCFIQM3oECBwQAA..i&w=200&h=200&hcb=2&ved=2ahUKEwinwqXjusCLAxW6Q_EDHU0bCFIQM3oECBwQAA")!, type: .image)],
+                recording: HealthRecording(duration: 2, waveformSamples: [], url: nil)
+            )
+        }
     }
 }

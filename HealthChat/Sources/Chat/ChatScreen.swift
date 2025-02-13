@@ -50,7 +50,8 @@ struct ChatScreen: View {
                     defaultActionClosure(message, .reply)
                 }
             }
-            .setAvailableInput(.full)
+            .setAvailableInput(model.status == .active ? .full : .none)
+            .showMessageMenuOnLongPress(model.status == .active)
             .setMediaPickerSelectionParameters(
                 .init(
                     mediaType: .photo,
@@ -68,8 +69,6 @@ struct ChatScreen: View {
                     cameraSelectionBackground: .black
                 )
             )
-            .disabled(model.status == .inactive)
-            .opacity(model.status == .inactive ? 0.5 : 1.0)
         }
     }
 }
