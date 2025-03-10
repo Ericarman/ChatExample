@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		FE1A6D472D52561400634D2D /* ContactUsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1A6D462D52561400634D2D /* ContactUsScreen.swift */; };
 		FE1A6D4D2D53900300634D2D /* DSColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1A6D4C2D53900300634D2D /* DSColor.swift */; };
-		FE2DF37A2D196A6300BD9E21 /* ExyteChat in Frameworks */ = {isa = PBXBuildFile; productRef = FE2DF3792D196A6300BD9E21 /* ExyteChat */; };
 		FE2DF37D2D1972E900BD9E21 /* HealthAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2DF37C2D1972E900BD9E21 /* HealthAttachment.swift */; };
 		FE2DF37F2D19730500BD9E21 /* HealthUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2DF37E2D19730500BD9E21 /* HealthUser.swift */; };
 		FE2DF3812D19731700BD9E21 /* HealthChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE2DF3802D19731700BD9E21 /* HealthChatMessage.swift */; };
@@ -34,6 +33,9 @@
 		FE74C60B2D088230006054E6 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74C60A2D088230006054E6 /* TestUtils.swift */; };
 		FE74C60D2D08B25F006054E6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74C60C2D08B25F006054E6 /* ViewModel.swift */; };
 		FE74C6112D08B9FF006054E6 /* HealthChatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74C60F2D08B9FF006054E6 /* HealthChatTests.swift */; };
+		FEC1C9A52D7EBD5500676FB7 /* ExyteChat in Frameworks */ = {isa = PBXBuildFile; productRef = FEC1C9A42D7EBD5500676FB7 /* ExyteChat */; };
+		FEC1C9AB2D7EC59E00676FB7 /* ExyteChat in Frameworks */ = {isa = PBXBuildFile; productRef = FEC1C9AA2D7EC59E00676FB7 /* ExyteChat */; };
+		FEC1C9AE2D7EC83700676FB7 /* ExyteChat in Frameworks */ = {isa = PBXBuildFile; productRef = FEC1C9AD2D7EC83700676FB7 /* ExyteChat */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -117,7 +119,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE2DF37A2D196A6300BD9E21 /* ExyteChat in Frameworks */,
+				FEC1C9AB2D7EC59E00676FB7 /* ExyteChat in Frameworks */,
+				FEC1C9A52D7EBD5500676FB7 /* ExyteChat in Frameworks */,
+				FEC1C9AE2D7EC83700676FB7 /* ExyteChat in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,7 +307,9 @@
 			);
 			name = HealthChat;
 			packageProductDependencies = (
-				FE2DF3792D196A6300BD9E21 /* ExyteChat */,
+				FEC1C9A42D7EBD5500676FB7 /* ExyteChat */,
+				FEC1C9AA2D7EC59E00676FB7 /* ExyteChat */,
+				FEC1C9AD2D7EC83700676FB7 /* ExyteChat */,
 			);
 			productName = HealthChat;
 			productReference = FE74C5DA2D086BC8006054E6 /* HealthChat.framework */;
@@ -364,7 +370,7 @@
 			mainGroup = FE74C5B12D086B11006054E6;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				FE2DF3782D196A6300BD9E21 /* XCRemoteSwiftPackageReference "Chat" */,
+				FEC1C9AC2D7EC83700676FB7 /* XCRemoteSwiftPackageReference "Chat" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = FE74C5BB2D086B11006054E6 /* Products */;
@@ -808,7 +814,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FE2DF3782D196A6300BD9E21 /* XCRemoteSwiftPackageReference "Chat" */ = {
+		FEC1C9AC2D7EC83700676FB7 /* XCRemoteSwiftPackageReference "Chat" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Ericarman/Chat.git";
 			requirement = {
@@ -819,9 +825,17 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FE2DF3792D196A6300BD9E21 /* ExyteChat */ = {
+		FEC1C9A42D7EBD5500676FB7 /* ExyteChat */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FE2DF3782D196A6300BD9E21 /* XCRemoteSwiftPackageReference "Chat" */;
+			productName = ExyteChat;
+		};
+		FEC1C9AA2D7EC59E00676FB7 /* ExyteChat */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = ExyteChat;
+		};
+		FEC1C9AD2D7EC83700676FB7 /* ExyteChat */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FEC1C9AC2D7EC83700676FB7 /* XCRemoteSwiftPackageReference "Chat" */;
 			productName = ExyteChat;
 		};
 /* End XCSwiftPackageProductDependency section */

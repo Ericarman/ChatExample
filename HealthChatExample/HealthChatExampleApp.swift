@@ -74,7 +74,7 @@ private extension HealthChatModel {
         
         
         let model = HealthChatModel(
-            user: user, status: .inactive, language: "en"
+            user: user, status: .active, language: "en"
         )
         model.messages = HealthChatMessage.testMessagesList
         return model
